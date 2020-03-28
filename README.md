@@ -31,3 +31,11 @@ Cada solicitud es procesada por un gestor. El gestor es el código que ejecuta l
 ### Conservación de recursos
 
 El procesamiento asíncrono tiene una prioridad inferior en comparación con la interacción en tiempo real mediante el navegador y la API. Para garantizar que haya recursos suficientes para controlar un aumento de los recursos de computación, el marco de inclusión en cola monitorea los recursos del sistema, como la memoria del servidor y el uso de CPU, y reduce el procesamiento asíncrono cuando se superan los umbrales. Esta es una forma elaborada de decir que el sistema de múltiples arrendatarios se protege a sí mismo. Si una organización intenta “consumir” más recursos de los que le corresponden, el procesamiento asíncrono se suspende hasta que se alcanza un umbral normal. En resumen, no hay ninguna garantía por lo que respecta al tiempo de procesamiento, pero al final todo funciona correctamente.
+
+- ¿En que escenarios se utiliza?
+  
+  1. En llamadas a servicios web
+  2. Proesos remotos
+  3. Limpiezas de datos
+  4. Realizacion de operaciones de procesamiento secuenciales con servicios web externos.
+  5. Tareas crónicas (que se hagan cada determinado tiempo, diarias o semanales)
